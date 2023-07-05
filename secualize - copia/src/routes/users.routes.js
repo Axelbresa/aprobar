@@ -1,19 +1,35 @@
 const {
-  getUsers,
-  renderIndex,
-  editar,
-  p,
+
   lista,
+  crearreserva,
+  crearUsuarios,
+  listadoReserva,
+  renderEditar,
+  obtenerUnaReserva,
+  actualizarReserva,
+  EliminarReserva
 } = require("../controllers/user.controllers");
 
 const routes = require("express").Router();
 
-routes.get("/users", renderIndex);
+//vistas
 
-routes.get("/p", p);
+routes.get("/crear", crearreserva);
 
-routes.get("/res", editar);
+routes.get("/", lista);
 
-routes.get("/lista", lista);
+routes.get("/editar/:id", renderEditar);
 
+//Peticiones
+
+routes.get("/api/:id", obtenerUnaReserva);
+
+routes.get('/api/', listadoReserva)
+
+
+routes.post('/api', crearUsuarios)
+
+routes.put("/api/:id", actualizarReserva)
+
+routes.delete("/api/:id", EliminarReserva)
 module.exports = routes;

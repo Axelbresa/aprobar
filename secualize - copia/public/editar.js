@@ -6,8 +6,8 @@ const reservaId = formReserva.dataset.id;
 
 const nombre = document.querySelector('#nombre');
 const apellido = document.querySelector('#apellido');
-const fecha_ingreso = document.querySelector('#fechaingreso');
-const fecha_salida = document.querySelector('#fechasalida');
+const fecha_ingreso = document.querySelector('#fecha_ingreso');
+const fecha_salida = document.querySelector('#fecha_salida');
 const habitacion = document.querySelector('#habitacion');
 const cantidad_personas = document.querySelector('#cantidad_personas');
 const telefono = document.querySelector('#telefono');
@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Mostrar en el formulario los datos de la reserva que se quiere actualizar
   nombre.value = data.nombre;
   apellido.value = data.apellido;
+  fecha_ingreso.value = data.fecha_ingreso;
+  fecha_salida.value = data.fecha_salida;
   habitacion.value = data.habitacion;
   cantidad_personas.value = data.cantidad_personas;
   telefono.value = data.telefono;
@@ -33,6 +35,8 @@ formReserva.addEventListener('submit', async (e) => {
   reservaActualizada = {
     nombre: nombre.value,
     apellido: apellido.value,
+    fecha_ingreso: fecha_ingreso.value,
+    fecha_salida: fecha_salida.value,
     habitacion: habitacion.value,
     cantidad_personas: cantidad_personas.value,
     telefono: telefono.value,

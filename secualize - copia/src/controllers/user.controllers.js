@@ -1,3 +1,4 @@
+const { where } = require ("sequelize");
 const User = require("../../models/reserva");
 const metodos = {};
 
